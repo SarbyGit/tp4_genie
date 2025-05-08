@@ -31,7 +31,7 @@ namespace JeuHoy_WPF.vue
         {
             InitializeComponent();
 
-            _wmpIntro.Open(@"./HoyContent/intro.mp3");
+            _wmpIntro.Open(@"./Resources/HoyContent/Intro.mp3");
             _wmpIntro.Play(true);
 
         }
@@ -50,7 +50,7 @@ namespace JeuHoy_WPF.vue
             f.ShowDialog();
             f.Close();
             this.Show();
-            _wmpIntro.Open(@"./HoyContent/intro.mp3");
+            _wmpIntro.Open(@"./Resources/HoyContent/Intro.mp3");
             _wmpIntro.Play(true);
         }
 
@@ -68,7 +68,7 @@ namespace JeuHoy_WPF.vue
             f.ShowDialog();
             f.Close();
             this.Show();
-            _wmpIntro.Open(@"./HoyContent/intro.mp3");
+            _wmpIntro.Open(@"./Resources/HoyContent/Intro.mp3");
             _wmpIntro.Play(true);
         }
 
