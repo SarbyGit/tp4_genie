@@ -1,0 +1,30 @@
+﻿<Window x:Class="JeuHoy_WPF.vue.wAide"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JeuHoy_WPF"
+        mc:Ignorable="d"
+       Title="Jeu Hoy" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen"  Icon="../Resources/téléchargement.jpg">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/AideTuto.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Image x:Name="image" Grid.Column="0" Grid.Row="4" Margin="30,0,0,0" Source="../Resources/edit_undo.png" MouseEnter="picRetour_MouseHover" MouseLeave="picRetour_MouseLeave" MouseLeftButtonDown="picRetour_Click"/>
+
+    </Grid>
+</Window>

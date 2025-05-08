@@ -1,0 +1,31 @@
+﻿<Window x:Class="JeuHoy_WPF.vue.wEntree"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JeuHoy_WPF"
+        mc:Ignorable="d"
+        Title="Jeu Hoy" Height="450" Width="800" WindowState="Maximized" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Closing="Window_Closing" Icon="../Resources/téléchargement.jpg">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/FondEntree.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image x:Name="picJouer" Grid.Column="1" Grid.Row="4" Margin="5" Source="../Resources/JouerHoy.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" MouseLeftButtonDown="picJouer_MouseLeftButtonDown" MouseEnter="pic_MouseHover" MouseLeave="pic_MouseLeave"/>
+        <Image x:Name="picEntrainement" Grid.Column="2" Grid.Row="4" Margin="5" Source="../Resources/Entrainement.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" MouseLeftButtonDown="picEntrainement_MouseLeftButtonDown" MouseEnter="pic_MouseHover" MouseLeave="pic_MouseLeave"/>
+        <Image x:Name="picAide" Grid.Column="3" Margin="5" Grid.Row="4" Source="../Resources/Aide.png" HorizontalAlignment="Center" VerticalAlignment="Center" Stretch="Uniform" MouseEnter="pic_MouseHover" MouseLeftButtonDown="picAide_MouseLeftButtonDown" MouseLeave="pic_MouseLeave"/>
+    </Grid>
+
+</Window>

@@ -1,0 +1,88 @@
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.AssemblyReference.cache
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.SuggestedBindingRedirects.cache
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wAide.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntrainement.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntree.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wJeu.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\App.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_Content.g.cs
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.cache
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.lref
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe.config
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.pdb
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.dll
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.xml
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wAide.baml
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntrainement.baml
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntree.baml
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wJeu.baml
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.g.resources
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.Properties.Resources.resources
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.GenerateResource.cache
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.CoreCompileInputs.cache
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.CopyComplete
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.exe
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.pdb
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\hooy.wav
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\hoy.wav
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\Intro.mp3
+D:\Cours H2023\4GD\Semaine 12\TP#4_2023\JeuHoyEtudiants\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\zik.wav
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\hooy.wav
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\hoy.wav
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\Intro.mp3
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\HoyContent\zik.wav
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe.config
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.pdb
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.dll
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.xml
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.AssemblyReference.cache
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wAide.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntrainement.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntree.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wJeu.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\App.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_Content.g.cs
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.cache
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.lref
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wAide.baml
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntrainement.baml
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wEntree.baml
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\wJeu.baml
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.g.resources
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.Properties.Resources.resources
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.GenerateResource.cache
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.CoreCompileInputs.cache
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.CopyComplete
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.exe
+D:\Cours H2024\4DG\Semaine 12\TP#4_2024\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.pdb
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe.config
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.exe
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\JeuHoy_WPF_Natif.pdb
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.dll
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Microsoft.Kinect.xml
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.AssemblyReference.cache
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\App.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_Content.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.cache
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif_MarkupCompile.lref
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.g.resources
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.Properties.Resources.resources
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.GenerateResource.cache
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.csproj.CoreCompileInputs.cache
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_W.152A55AE.Up2Date
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.exe
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\JeuHoy_WPF_Natif.pdb
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wAide.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wEntrainement.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wEntree.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wJeu.g.cs
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wAide.baml
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wEntrainement.baml
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wEntree.baml
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\obj\Debug\vue\wJeu.baml
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Resources\HoyContent\hooy.wav
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Resources\HoyContent\hoy.wav
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Resources\HoyContent\Intro.mp3
+C:\ecole\420-4DG Genie logiciel 2\Tp4\TP4_2025\TP#4_2025\JeuHoyEtudiants\JeuHoy_WPF_Natif\bin\Debug\Resources\HoyContent\zik.wav

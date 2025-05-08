@@ -1,0 +1,71 @@
+﻿<Window x:Class="JeuHoy_WPF.vue.wEntrainement"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:JeuHoy_WPF"
+        mc:Ignorable="d"
+        Title="Jeu Hoy" Height="1024" Width="1368" WindowState="Maximized" ResizeMode="NoResize" 
+        WindowStartupLocation="CenterScreen" Icon="../Resources/téléchargement.jpg" Closed="Window_Closed">
+
+    <Window.Resources>
+        <Storyboard x:Key="HoyDetectedAnimation">
+            <DoubleAnimation 
+                Storyboard.TargetName="HoyFeedbackOverlay" 
+                Storyboard.TargetProperty="Opacity"
+                From="0.4" To="0" Duration="0:0:0.8" />
+        </Storyboard>
+    </Window.Resources>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="../Resources/fond.png"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="145.698"/>
+            <ColumnDefinition Width="154.302"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Canvas x:Name="pDessinSquelette" HorizontalAlignment="Center" Grid.Column="0" Height="300px" VerticalAlignment="Center" Width="300px"  Background="Black" Grid.ColumnSpan="2" Grid.Row="1"/>
+        <Image x:Name="picKinect" HorizontalAlignment="Center" Grid.Column="0" Height="300px" VerticalAlignment="Center" Width="300px" Source="../Resources/téléchargement.jpg" Grid.ColumnSpan="2" />
+        <TextBox x:Name="txtConsole" HorizontalAlignment="Center" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Center" Width="300" Height="300" Grid.ColumnSpan="2"/>
+        <Image x:Name="picPositionAFaire" Grid.Column="2" HorizontalAlignment="Left" Height="822" VerticalAlignment="Top" Width="828" Grid.RowSpan="3"/>
+        <Grid Grid.Column="2" Margin="5,7,763,193">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="87"/>
+                <ColumnDefinition Width="87"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="btnSuivant" Grid.Column="0" Grid.Row="0" Content="Suivant" HorizontalAlignment="Left" VerticalAlignment="Top" Height="38" Width="85" Click="btnClickChangerFigure_Click"/>
+            <Button x:Name="btnPrecedent" Grid.Column="1" Grid.Row="0" Content="Précédent" HorizontalAlignment="Center" Width="85" Click="btnClickChangerFigure_Click" Margin="0,0,0,7"/>
+            <Button x:Name="btnApprendre" Grid.Column="2" Grid.Row="0" Content="Apprendre" HorizontalAlignment="Left" VerticalAlignment="Top" Height="38" Width="85" Click="btnApprendre_Click"/>
+            <Image x:Name="imgRetour" Grid.Column="0" Grid.Row="1" Source="/edit_undo.png" MouseEnter="picRetour_MouseHover" MouseLeave="picRetour_MouseLeave" MouseLeftButtonDown="picRetour_Click"/>
+            <Label x:Name="lblFigureEnCours" Grid.Column="1" Grid.Row="1" Content="1" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Matura MT Script Capitals" FontSize="50" />
+            <Label x:Name="lblNbPositions" Grid.Column="2" Grid.Row="1" Content=" / 10" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Matura MT Script Capitals" FontSize="50" />
+        </Grid>
+        <Border Grid.Column="0" Grid.Row="0" BorderBrush="Black" BorderThickness="1" CornerRadius="5" Margin="10" Width="120" Height="30" HorizontalAlignment="Left" VerticalAlignment="Top">
+            <StackPanel Orientation="Horizontal">
+                <Ellipse x:Name="VoiceRecognitionStatus" Width="10" Height="10" Fill="Gray" Margin="5" VerticalAlignment="Center"/>
+                <TextBlock Text="Reconnaissance" VerticalAlignment="Center"/>
+            </StackPanel>
+        </Border>
+        <ToggleButton x:Name="btnRecoVocale" Grid.Column="1" Grid.Row="0" Content="Activer 'HOY!'" Width="120" Height="30" 
+                      HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10" 
+                      IsChecked="False" Checked="btnRecoVocale_Checked" Unchecked="btnRecoVocale_Unchecked"/>
+        <Border x:Name="HoyFeedbackOverlay" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Grid.RowSpan="4" 
+                Background="Green" Opacity="0" IsHitTestVisible="False"/>
+        <TextBlock Grid.Column="2" Grid.Row="3" Text="Criez 'HOY!' pour valider la position" 
+                   FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="White" Opacity="0.8" Visibility="Collapsed" x:Name="txtInstructionVocale"/>
+    </Grid>
+</Window>
+    

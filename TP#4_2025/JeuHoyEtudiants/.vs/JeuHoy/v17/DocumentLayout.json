@@ -1,0 +1,258 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\pr\u00E9sentation\\entrainementpresenteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\pr\u00E9sentation\\entrainementpresenteur.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\jouerson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\jouerson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\vue\\wentrainement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\vue\\wentrainement.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\mod\u00E8le\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\mod\u00E8le\\position.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\alexc\\AppData\\Local\\Temp\\5a59be3d-1666-45f9-8b49-5dd1436dc89b_TP4_2025.zip.89b\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\wEntrainement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\vue\\wentrainement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\vue\\wentrainement.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\mod\u00E8le\\reconnaissancevocale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\mod\u00E8le\\reconnaissancevocale.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\mod\u00E8le\\perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\mod\u00E8le\\perceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\mod\u00E8le\\gestionnaireperceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\mod\u00E8le\\gestionnaireperceptron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\mod\u00E8le\\jointdataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\mod\u00E8le\\jointdataconverter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|c:\\ecole\\420-4dg genie logiciel 2\\tp4\\tp4_2025\\tp#4_2025\\jeuhoyetudiants\\jeuhoy_wpf_natif\\vue\\wentree.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4B7D33C6-5D38-49F9-B860-D133255627DA}|JeuHoy_WPF_Natif\\JeuHoy_WPF_Natif.csproj|solutionrelative:jeuhoy_wpf_natif\\vue\\wentree.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 472,
+          "SelectedChildIndex": 14,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{79664857-03bf-4bca-aa54-ec998b3328f8}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{6324226f-61b6-4f28-92ee-18d4b5fe1e48}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1463471288:0:{83107a3e-496a-485e-b455-16ddb978e55e}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JouerSon.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\JouerSon.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\JouerSon.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\JouerSon.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\JouerSon.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAAwBAAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T19:03:52.833Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ReconnaissanceVocale.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\ReconnaissanceVocale.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\mod\u00E8le\\ReconnaissanceVocale.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\ReconnaissanceVocale.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\mod\u00E8le\\ReconnaissanceVocale.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAtwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:40:13.728Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "wEntrainement.xaml.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml.cs",
+              "ViewState": "AgIAAHQCAAAAAAAAAAA/wIACAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T17:38:11.58Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "EntrainementPresenteur.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\pr\u00E9sentation\\EntrainementPresenteur.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\pr\u00E9sentation\\EntrainementPresenteur.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\pr\u00E9sentation\\EntrainementPresenteur.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\pr\u00E9sentation\\EntrainementPresenteur.cs",
+              "ViewState": "AgIAAHcAAAAAAAAAAAA8wHAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:11:57.178Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "wEntrainement.xaml",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\vue\\wEntrainement.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-07T18:19:26.109Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "wEntrainement.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\alexc\\AppData\\Local\\Temp\\5a59be3d-1666-45f9-8b49-5dd1436dc89b_TP4_2025.zip.89b\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\wEntrainement.xaml.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Users\\alexc\\AppData\\Local\\Temp\\5a59be3d-1666-45f9-8b49-5dd1436dc89b_TP4_2025.zip.89b\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\wEntrainement.xaml.cs",
+              "ToolTip": "C:\\Users\\alexc\\AppData\\Local\\Temp\\5a59be3d-1666-45f9-8b49-5dd1436dc89b_TP4_2025.zip.89b\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\wEntrainement.xaml.cs [Lecture seule]",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Users\\alexc\\AppData\\Local\\Temp\\5a59be3d-1666-45f9-8b49-5dd1436dc89b_TP4_2025.zip.89b\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\wEntrainement.xaml.cs [Lecture seule]",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAowBYAAABmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T17:46:27.086Z",
+              "EditorCaption": " [Lecture seule]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "position.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\position.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\mod\u00E8le\\position.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\position.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\mod\u00E8le\\position.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAQwA4AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:06:09.077Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "perceptron.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\perceptron.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\mod\u00E8le\\perceptron.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\perceptron.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\mod\u00E8le\\perceptron.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAYwBIAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:06:34.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "JointDataConverter.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\JointDataConverter.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\mod\u00E8le\\JointDataConverter.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\JointDataConverter.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\mod\u00E8le\\JointDataConverter.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAA3wEwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:08:01.309Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GestionnairePerceptron.cs",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\GestionnairePerceptron.cs",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\mod\u00E8le\\GestionnairePerceptron.cs",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\mod\u00E8le\\GestionnairePerceptron.cs",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\mod\u00E8le\\GestionnairePerceptron.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-07T18:08:35.565Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "wEntree.xaml",
+              "DocumentMoniker": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntree.xaml",
+              "RelativeDocumentMoniker": "JeuHoy_WPF_Natif\\vue\\wEntree.xaml",
+              "ToolTip": "C:\\ecole\\420-4DG Genie logiciel 2\\Tp4\\TP4_2025\\TP#4_2025\\JeuHoyEtudiants\\JeuHoy_WPF_Natif\\vue\\wEntree.xaml",
+              "RelativeToolTip": "JeuHoy_WPF_Natif\\vue\\wEntree.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-05-07T17:43:01.974Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedHeight": 250,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
