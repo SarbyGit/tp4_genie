@@ -1,0 +1,20 @@
+﻿################################################################################
+# Ce fichier .gitignore a été automatiquement créé par Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/tp4_genie
+/TP#4_2025/JeuHoyEtudiants/.vs/JeuHoy/FileContentIndex
+/TP#4_2025/JeuHoyEtudiants/.vs/JeuHoy/v17/.suo
+/TP#4_2025/JeuHoyEtudiants/.vs/JeuHoy/v17/DocumentLayout.backup.json
+/TP#4_2025/JeuHoyEtudiants/.vs/JeuHoy/v17/DocumentLayout.json
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/bin/Debug/JeuHoy_WPF_Natif.exe
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/bin/Debug/JeuHoy_WPF_Natif.pdb
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/vue
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.csproj.AssemblyReference.cache
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.csproj.CoreCompileInputs.cache
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.csproj.FileListAbsolute.txt
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.csproj.GenerateResource.cache
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.exe
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif.pdb
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif_MarkupCompile.cache
+/TP#4_2025/JeuHoyEtudiants/JeuHoy_WPF_Natif/obj/Debug/JeuHoy_WPF_Natif_MarkupCompile.lref
