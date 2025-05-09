@@ -1,4 +1,5 @@
-﻿using JeuHoy_WPF;
+﻿// EntrainementPresenteur.cs
+using JeuHoy_WPF;
 using JeuHoy_WPF.modèle;
 using JeuHoy_WPF.vue;
 using JeuHoy_WPF_Natif.modèle;
@@ -7,59 +8,108 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace JeuHoy_WPF_Natif.présentation
 {
     internal class EntrainementPresenteur
     {
+        // Référence à l'interface de la vue
+        private readonly IEntrainementVue _vue;
+
+        // Objets du modèle
         private GestionnairePerceptron _gestionnairePerceptrons;
-        private Dictionary<string, BitmapImage> _imagesFigures;
-        private int _positionEnCours;
         private ReconnaissanceVocale _reconnaissanceVocale;
-        private KinectSensor _kinectSensor;
-        private Canvas _canvasSquelette;
-        private DisplayFrameType _currentDisplayFrameType;
+        private Dictionary<string, BitmapImage> _imagesFigures;
+
+        // État de l'application
+        private int _positionEnCours;
         private Body _currentBody = null;
+
+        // Objets liés à Kinect
+        private KinectSensor _kinectSensor;
+        private DisplayFrameType _currentDisplayFrameType;
         private WriteableBitmap _bitmap = null;
         private ushort[] _picFrameData = null;
         private byte[] _picPixels = null;
 
-        public event EventHandler CommandeVocaleDetectee;
-
-        public EntrainementPresenteur()
+        public EntrainementPresenteur(IEntrainementVue vue)
         {
+            _vue = vue ?? throw new ArgumentNullException(nameof(vue));
+
+            // Initialisation des composants
             _gestionnairePerceptrons = new GestionnairePerceptron();
             _imagesFigures = new Dictionary<string, BitmapImage>();
             _positionEnCours = 1;
-            //Reconnaissance vocale
+
+            // Initialisation de la reconnaissance vocale
             _reconnaissanceVocale = new ReconnaissanceVocale();
             _reconnaissanceVocale.CommandeDetectee += ReconnaissanceVocale_CommandeDetectee;
 
-            // Charger les images des figures
+            // Chargement des ressources
             ChargerImagesFigures();
+
+            // Mise à jour initiale de l'affichage
+            MettreAJourAffichageFigure();
         }
 
-        // Méthode pour initialiser les ressources Kinect
-        public void InitKinect(KinectSensor kinectSensor, Canvas canvasSquelette, DisplayFrameType displayFrameType)
+        /// <summary>
+        /// Initialise la Kinect et configure le type d'affichage
+        /// </summary>
+        public void InitialiserKinect(KinectSensor kinectSensor, DisplayFrameType displayFrameType)
         {
-            _kinectSensor = kinectSensor;
-            _canvasSquelette = canvasSquelette;
+            _kinectSensor = kinectSensor ?? throw new ArgumentNullException(nameof(kinectSensor));
             _currentDisplayFrameType = displayFrameType;
+            ConfigurerAffichage(displayFrameType);
         }
 
-        // Méthode pour traiter les données du squelette
-        public string TraiterDonneesSquelette(Body[] squelettes)
+        /// <summary>
+        /// Configure les buffers pour le type d'affichage spécifié
+        /// </summary>
+        public void ConfigurerAffichage(DisplayFrameType displayFrameType)
         {
-            _canvasSquelette.Children.Clear();
+            if (_kinectSensor == null)
+                return;
+
+            _currentDisplayFrameType = displayFrameType;
+            _vue.ChangerModeAffichage(displayFrameType);
+
+            FrameDescription frameDescription;
+
+            switch (_currentDisplayFrameType)
+            {
+                case DisplayFrameType.Infrared:
+                case DisplayFrameType.Depth:
+                    frameDescription = _kinectSensor.InfraredFrameSource.FrameDescription;
+                    break;
+                case DisplayFrameType.Color:
+                default:
+                    frameDescription = _kinectSensor.ColorFrameSource.FrameDescription;
+                    break;
+            }
+
+            // Redimensionner les buffers
+            _picPixels = new byte[frameDescription.Width * frameDescription.Height * 4];
+            _picFrameData = new ushort[frameDescription.Width * frameDescription.Height];
+
+            // Réinitialiser bitmap
+            _bitmap = null;
+        }
+
+        /// <summary>
+        /// Traite les données du squelette et met à jour l'interface
+        /// </summary>
+        public void TraiterDonneesSquelette(Body[] squelettes)
+        {
+            if (squelettes == null)
+                return;
+
+            _vue.EffacerSquelette();
             _currentBody = null;
 
+            // Recherche du premier squelette suivi
             foreach (Body squelette in squelettes)
             {
                 if (squelette.IsTracked)
@@ -67,71 +117,42 @@ namespace JeuHoy_WPF_Natif.présentation
                     _currentBody = squelette;
 
                     // Dessiner les joints
-                    foreach (Joint j in squelette.Joints.Values)
+                    foreach (Joint joint in squelette.Joints.Values)
                     {
-                        DrawJoint(j, Colors.BlueViolet, 10);
+                        if (joint.TrackingState != TrackingState.NotTracked)
+                        {
+                            Point point = ConvertirPositionEnPoint(joint.Position);
+                            _vue.DessinerJoint(point, Colors.BlueViolet, 10);
+                        }
                     }
 
                     // Dessiner les os
-                    DrawBones(squelette);
+                    DessinerOs(squelette);
 
-                    // Identifier la position en temps réel
-                    return IdentifierPosition(squelette.Joints);
+                    // Mettre à jour la console avec l'identification de position
+                    string message = IdentifierPosition(squelette.Joints);
+                    _vue.MettreAJourConsole(message);
+
+                    break; // On ne traite que le premier squelette
                 }
             }
 
-            return "Aucun squelette détecté";
-        }
-
-        // Méthodes pour dessiner le squelette
-        public void DrawJoint(Joint joint, Color color, int size)
-        {
-            if (joint.Position.X != 0 && joint.Position.Y != 0 && joint.Position.Z != 0)
+            if (_currentBody == null)
             {
-                // Convertir la position du joint en coordonnées d'écran
-                Point point = GetPoint(joint.Position);
-
-                // Créer un cercle à la position du joint
-                Ellipse ellipse = new Ellipse();
-                ellipse.Fill = new SolidColorBrush(color);
-                ellipse.Width = size;
-                ellipse.Height = size;
-
-                // Positionner le cercle sur l'élément de dessin Canvas
-                Canvas.SetLeft(ellipse, point.X - size / 2);
-                Canvas.SetTop(ellipse, point.Y - size / 2);
-
-                // Ajouter le cercle à l'élément de dessin Canvas
-                _canvasSquelette.Children.Add(ellipse);
+                _vue.MettreAJourConsole("Aucun squelette détecté");
             }
         }
 
-        public void DrawBone(Joint joint1, Joint joint2)
+        /// <summary>
+        /// Dessine les os du squelette
+        /// </summary>
+        private void DessinerOs(Body corps)
         {
-            if (joint1.TrackingState == TrackingState.NotTracked ||
-                joint2.TrackingState == TrackingState.NotTracked)
+            if (corps == null)
                 return;
 
-            Point point1 = GetPoint(joint1.Position);
-            Point point2 = GetPoint(joint2.Position);
-
-            Line line = new Line
-            {
-                X1 = point1.X,
-                Y1 = point1.Y,
-                X2 = point2.X,
-                Y2 = point2.Y,
-                Stroke = Brushes.Green,
-                StrokeThickness = 3
-            };
-
-            _canvasSquelette.Children.Add(line);
-        }
-
-        public void DrawBones(Body body)
-        {
             // Liste des paires de joints qui forment les os
-            var bones = new Tuple<JointType, JointType>[]
+            var os = new Tuple<JointType, JointType>[]
             {
                 // Colonne vertébrale
                 Tuple.Create(JointType.Head, JointType.Neck),
@@ -164,18 +185,42 @@ namespace JeuHoy_WPF_Natif.présentation
                 Tuple.Create(JointType.AnkleRight, JointType.FootRight)
             };
 
-            foreach (var bone in bones)
+            // Dessiner chaque os
+            foreach (var paire in os)
             {
-                DrawBone(body.Joints[bone.Item1], body.Joints[bone.Item2]);
+                DessinerOs(corps.Joints[paire.Item1], corps.Joints[paire.Item2]);
             }
         }
 
-        // Méthode pour convertir les coordonnées
-        public Point GetPoint(CameraSpacePoint position)
+        /// <summary>
+        /// Dessine un os entre deux joints
+        /// </summary>
+        private void DessinerOs(Joint joint1, Joint joint2)
         {
+            // Vérifier que les deux joints sont suivis
+            if (joint1.TrackingState == TrackingState.NotTracked ||
+                joint2.TrackingState == TrackingState.NotTracked)
+                return;
+
+            // Convertir les coordonnées
+            Point point1 = ConvertirPositionEnPoint(joint1.Position);
+            Point point2 = ConvertirPositionEnPoint(joint2.Position);
+
+            // Déléguer le dessin à la vue
+            _vue.DessinerLigne(point1, point2, Colors.Green, 3);
+        }
+
+        /// <summary>
+        /// Convertit une position 3D de la Kinect en position 2D pour l'affichage
+        /// </summary>
+        private Point ConvertirPositionEnPoint(CameraSpacePoint position)
+        {
+            if (_kinectSensor == null)
+                return new Point();
+
             Point point = new Point();
 
-            // Obtenir les coordonnées du point par rapport à la Kinect
+            // Obtenir les coordonnées du point selon le mode d'affichage
             switch (_currentDisplayFrameType)
             {
                 case DisplayFrameType.Color:
@@ -185,19 +230,19 @@ namespace JeuHoy_WPF_Natif.présentation
                         point.Y = float.IsInfinity(colorPoint.Y) ? 0.0 : colorPoint.Y;
                     }
                     break;
+
                 case DisplayFrameType.Depth:
                 case DisplayFrameType.Infrared:
+                default:
                     {
                         DepthSpacePoint depthPoint = _kinectSensor.CoordinateMapper.MapCameraPointToDepthSpace(position);
                         point.X = float.IsInfinity(depthPoint.X) ? 0.0 : depthPoint.X;
                         point.Y = float.IsInfinity(depthPoint.Y) ? 0.0 : depthPoint.Y;
                     }
                     break;
-                default:
-                    break;
             }
 
-            // Déterminer la résolution source en fonction du type d'affichage
+            // Déterminer la résolution source
             double sourceWidth = _currentDisplayFrameType == DisplayFrameType.Color ?
                 _kinectSensor.ColorFrameSource.FrameDescription.Width :
                 _kinectSensor.DepthFrameSource.FrameDescription.Width;
@@ -206,9 +251,9 @@ namespace JeuHoy_WPF_Natif.présentation
                 _kinectSensor.ColorFrameSource.FrameDescription.Height :
                 _kinectSensor.DepthFrameSource.FrameDescription.Height;
 
-            // Transformer les coordonnées pour qu'elles s'adaptent au canvas
-            double scaleX = _canvasSquelette.Width / sourceWidth;
-            double scaleY = _canvasSquelette.Height / sourceHeight;
+            // Adapter les coordonnées au canvas
+            double scaleX = _vue.LargeurCanvasSquelette / sourceWidth;
+            double scaleY = _vue.HauteurCanvasSquelette / sourceHeight;
 
             point.X = point.X * scaleX;
             point.Y = point.Y * scaleY;
@@ -216,129 +261,280 @@ namespace JeuHoy_WPF_Natif.présentation
             return point;
         }
 
-        // Méthodes pour les frames
-        public void SetupCurrentDisplay(DisplayFrameType newDisplayFrameType)
+        /// <summary>
+        /// Traite une frame de couleur et met à jour l'affichage
+        /// </summary>
+        public void TraiterFrameCouleur(ColorFrame frame)
         {
-            _currentDisplayFrameType = newDisplayFrameType;
-            FrameDescription frameDescription;
+            if (frame == null)
+                return;
+
+            FrameDescription description = frame.FrameDescription;
+
+            // Initialiser le bitmap si nécessaire
+            if (_bitmap == null)
+            {
+                _bitmap = new WriteableBitmap(
+                    description.Width,
+                    description.Height,
+                    96.0, 96.0,
+                    PixelFormats.Bgra32,
+                    null);
+            }
+
+            // Copier les données de la frame
+            frame.CopyConvertedFrameDataToArray(_picPixels, ColorImageFormat.Bgra);
+
+            // Mettre à jour le bitmap
+            _bitmap.Lock();
+            _bitmap.WritePixels(
+                new Int32Rect(0, 0, description.Width, description.Height),
+                _picPixels,
+                description.Width * 4,
+                0);
+            _bitmap.Unlock();
+
+            // Afficher l'image
+            _vue.AfficherImage(_bitmap);
+        }
+
+        /// <summary>
+        /// Traite une frame de profondeur et met à jour l'affichage
+        /// </summary>
+        public void TraiterFrameProfondeur(DepthFrame frame)
+        {
+            if (frame == null)
+                return;
+
+            FrameDescription description = frame.FrameDescription;
+
+            // Initialiser le bitmap si nécessaire
+            if (_bitmap == null)
+            {
+                _bitmap = new WriteableBitmap(
+                    description.Width,
+                    description.Height,
+                    96.0, 96.0,
+                    PixelFormats.Bgra32,
+                    null);
+            }
+
+            // Copier les données de la frame
+            frame.CopyFrameDataToArray(_picFrameData);
+
+            // Convertir les données de profondeur en pixels BGRA
+            int pixelIndex = 0;
+            for (int i = 0; i < _picFrameData.Length; i++)
+            {
+                ushort profondeur = _picFrameData[i];
+                byte r = 0, g = 0, b = 0;
+
+                // Coder la profondeur par couleur
+                if (profondeur < 1000)
+                {
+                    r = (byte)(profondeur % 255);
+                }
+                else if (profondeur < 2000)
+                {
+                    g = (byte)(profondeur % 255);
+                }
+                else if (profondeur < 3000)
+                {
+                    b = (byte)(profondeur % 255);
+                }
+                else
+                {
+                    r = g = b = 255;
+                }
+
+                _picPixels[pixelIndex++] = b;  // Bleu
+                _picPixels[pixelIndex++] = g;  // Vert
+                _picPixels[pixelIndex++] = r;  // Rouge
+                _picPixels[pixelIndex++] = 255; // Alpha
+            }
+
+            // Mettre à jour le bitmap
+            _bitmap.Lock();
+            _bitmap.WritePixels(
+                new Int32Rect(0, 0, description.Width, description.Height),
+                _picPixels,
+                description.Width * 4,
+                0);
+            _bitmap.Unlock();
+
+            // Afficher l'image
+            _vue.AfficherImage(_bitmap);
+        }
+
+        /// <summary>
+        /// Traite une frame infrarouge et met à jour l'affichage
+        /// </summary>
+        public void TraiterFrameInfrarouge(InfraredFrame frame)
+        {
+            if (frame == null)
+                return;
+
+            FrameDescription description = frame.FrameDescription;
+
+            // Initialiser le bitmap si nécessaire
+            if (_bitmap == null)
+            {
+                _bitmap = new WriteableBitmap(
+                    description.Width,
+                    description.Height,
+                    96.0, 96.0,
+                    PixelFormats.Bgra32,
+                    null);
+            }
+
+            // Copier les données de la frame
+            frame.CopyFrameDataToArray(_picFrameData);
+
+            // Constantes pour normalisation
+            const float InfraredSourceValueMaximum = ushort.MaxValue;
+            const float InfraredOutputValueMinimum = 0.01f;
+            const float InfraredOutputValueMaximum = 1.0f;
+            const float InfraredSceneValueAverage = 0.08f;
+            const float InfraredSceneValueStandardDeviations = 3.0f;
+
+            // Convertir en pixels BGRA
+            int pixelIndex = 0;
+            for (int i = 0; i < _picFrameData.Length; i++)
+            {
+                // Normaliser la valeur infrarouge
+                float intensityRatio = (float)_picFrameData[i] / InfraredSourceValueMaximum;
+                intensityRatio /= InfraredSceneValueAverage * InfraredSceneValueStandardDeviations;
+                intensityRatio = Math.Min(InfraredOutputValueMaximum, intensityRatio);
+                intensityRatio = Math.Max(InfraredOutputValueMinimum, intensityRatio);
+
+                // Convertir en valeur de pixel
+                byte intensity = (byte)(intensityRatio * 255.0f);
+
+                _picPixels[pixelIndex++] = intensity; // Bleu
+                _picPixels[pixelIndex++] = intensity; // Vert
+                _picPixels[pixelIndex++] = intensity; // Rouge
+                _picPixels[pixelIndex++] = 255;       // Alpha
+            }
+
+            // Mettre à jour le bitmap
+            _bitmap.Lock();
+            _bitmap.WritePixels(
+                new Int32Rect(0, 0, description.Width, description.Height),
+                _picPixels,
+                description.Width * 4,
+                0);
+            _bitmap.Unlock();
+
+            // Afficher l'image
+            _vue.AfficherImage(_bitmap);
+        }
+
+        /// <summary>
+        /// Traite une frame multi-source
+        /// </summary>
+        public void TraiterMultiSourceFrame(MultiSourceFrame frame)
+        {
+            if (frame == null)
+                return;
 
             switch (_currentDisplayFrameType)
             {
-                case DisplayFrameType.Infrared:
-                case DisplayFrameType.Depth:
-                    frameDescription = _kinectSensor.InfraredFrameSource.FrameDescription;
-                    _picPixels = new byte[frameDescription.Width * frameDescription.Height * 4];
-                    _picFrameData = new ushort[frameDescription.Width * frameDescription.Height];
-                    break;
-
                 case DisplayFrameType.Color:
-                    frameDescription = _kinectSensor.ColorFrameSource.FrameDescription;
-                    _picPixels = new byte[frameDescription.Width * frameDescription.Height * 4];
-                    _picFrameData = new ushort[frameDescription.Width * frameDescription.Height];
+                    using (ColorFrame colorFrame = frame.ColorFrameReference.AcquireFrame())
+                    {
+                        if (colorFrame != null)
+                            TraiterFrameCouleur(colorFrame);
+                    }
                     break;
-                default:
+
+                case DisplayFrameType.Depth:
+                    using (DepthFrame depthFrame = frame.DepthFrameReference.AcquireFrame())
+                    {
+                        if (depthFrame != null)
+                            TraiterFrameProfondeur(depthFrame);
+                    }
+                    break;
+
+                case DisplayFrameType.Infrared:
+                    using (InfraredFrame infraFrame = frame.InfraredFrameReference.AcquireFrame())
+                    {
+                        if (infraFrame != null)
+                            TraiterFrameInfrarouge(infraFrame);
+                    }
                     break;
             }
         }
 
-        // Méthodes pour traiter les images
-        public WriteableBitmap ShowColorFrame(ColorFrame colorFrame)
-        {
-            if (colorFrame != null)
-            {
-                FrameDescription frameDescription = colorFrame.FrameDescription;
-                if (_bitmap == null)
-                    _bitmap = new WriteableBitmap(frameDescription.Width, frameDescription.Height, 96.0, 96.0, PixelFormats.Bgra32, null);
-                colorFrame.CopyConvertedFrameDataToArray(_picPixels, ColorImageFormat.Bgra);
-
-                RenderPixelArray(_picPixels, frameDescription);
-            }
-            return _bitmap;
-        }
-
-        public WriteableBitmap ShowDepthFrame(DepthFrame depthFrame)
-        {
-            FrameDescription frameDescription = null;
-            ushort depth;
-            byte r = 0;
-            byte g = 0;
-            byte b = 0;
-            if (depthFrame != null)
-            {
-                frameDescription = depthFrame.FrameDescription;
-                depthFrame.CopyFrameDataToArray(_picFrameData);
-                int iIndexPicPixel = 0;
-                for (int i = 0; i < _picFrameData.Length; i++)
-                {
-                    depth = _picFrameData[i];
-                    if (depth < 1000)
-                    {
-                        r = (byte)(depth % 255);
-                        g = 0;
-                        b = 0;
-                    }
-                    else if (depth >= 1000 && depth < 2000)
-                    {
-                        r = 0;
-                        g = (byte)(depth % 255);
-                        b = 0;
-                    }
-                    else if (depth >= 2000 && depth < 3000)
-                    {
-                        r = 0;
-                        g = 0;
-                        b = (byte)(depth % 255);
-                    }
-                    else
-                        r = b = g = 255;
-                    _picPixels[iIndexPicPixel++] = b; // bleu
-                    _picPixels[iIndexPicPixel++] = g; // vert
-                    _picPixels[iIndexPicPixel++] = r; // rouge
-                    _picPixels[iIndexPicPixel++] = 255; // alpga
-                }
-                RenderPixelArray(_picPixels, frameDescription);
-            }
-            return _bitmap;
-        }
-
-        private void RenderPixelArray(byte[] pixels, FrameDescription currentFrameDescription)
-        {
-            _bitmap.Lock();
-            _bitmap.WritePixels(new Int32Rect(0, 0, currentFrameDescription.Width, currentFrameDescription.Height), pixels, currentFrameDescription.Width * 4, 0);
-            _bitmap.Unlock();
-        }
-
-        // Méthodes existantes
+        /// <summary>
+        /// Charge les images des figures depuis les ressources
+        /// </summary>
         private void ChargerImagesFigures()
         {
             for (int i = 1; i <= CstApplication.NBFIGURE; i++)
             {
                 string chemin = $"../Resources/fig{i}.png";
-                BitmapImage image = new BitmapImage(new System.Uri(chemin, System.UriKind.Relative));
+                BitmapImage image = new BitmapImage(new Uri(chemin, UriKind.Relative));
                 _imagesFigures[$"fig{i}"] = image;
             }
         }
 
+        /// <summary>
+        /// Passe à la figure suivante
+        /// </summary>
         public void FigureSuivante()
         {
             _positionEnCours++;
             if (_positionEnCours > CstApplication.NBFIGURE)
                 _positionEnCours = 1;
+
+            MettreAJourAffichageFigure();
         }
 
+        /// <summary>
+        /// Passe à la figure précédente
+        /// </summary>
         public void FigurePrecedente()
         {
             _positionEnCours--;
             if (_positionEnCours < 1)
                 _positionEnCours = CstApplication.NBFIGURE;
+
+            MettreAJourAffichageFigure();
         }
 
-        public void ApprendrePosition(IReadOnlyDictionary<JointType, Joint> joints)
+        /// <summary>
+        /// Met à jour l'affichage de la figure courante
+        /// </summary>
+        private void MettreAJourAffichageFigure()
         {
-            _gestionnairePerceptrons.ApprendrePosition(joints, _positionEnCours);
+            BitmapImage image = null;
+            string cle = $"fig{_positionEnCours}";
+
+            if (_imagesFigures.ContainsKey(cle))
+                image = _imagesFigures[cle];
+
+            _vue.AfficherFigureEnCours(_positionEnCours, image);
         }
 
-        public string IdentifierPosition(IReadOnlyDictionary<JointType, Joint> joints)
+        /// <summary>
+        /// Apprend la position actuelle avec les joints détectés
+        /// </summary>
+        public void ApprendrePosition()
+        {
+            if (_currentBody == null || !_currentBody.IsTracked)
+            {
+                _vue.MettreAJourConsole("Aucun squelette détecté. Placez-vous devant la Kinect.");
+                return;
+            }
+
+            _gestionnairePerceptrons.ApprendrePosition(_currentBody.Joints, _positionEnCours);
+            _vue.MettreAJourConsole($"Position {_positionEnCours} apprise !");
+        }
+
+        /// <summary>
+        /// Identifie la position à partir des joints détectés
+        /// </summary>
+        private string IdentifierPosition(IReadOnlyDictionary<JointType, Joint> joints)
         {
             List<int> positionsReconnues = _gestionnairePerceptrons.IdentifierPosition(joints);
 
@@ -354,44 +550,62 @@ namespace JeuHoy_WPF_Natif.présentation
             return resultat;
         }
 
-        public int PositionEnCours => _positionEnCours;
-
-        public BitmapImage GetImageFigureEnCours()
-        {
-            string cle = $"fig{_positionEnCours}";
-            if (_imagesFigures.ContainsKey(cle))
-                return _imagesFigures[cle];
-
-            return null;
-        }
-
+        /// <summary>
+        /// Gère l'événement de détection d'une commande vocale
+        /// </summary>
         private void ReconnaissanceVocale_CommandeDetectee(object sender, EventArgs e)
         {
+            // Jouer un son
             JouerSon joueurSon = new JouerSon();
             joueurSon.JouerSonAsync("./Resources/HoyContent/hooy.wav");
 
-            // Déclencher un événement pour notifier la vue
+            // Animation
+            _vue.DemarrerAnimationReconnaissanceVocale();
+
+            // Apprentissage de position
+            if (_currentBody != null && _currentBody.IsTracked)
+            {
+                _gestionnairePerceptrons.ApprendrePosition(_currentBody.Joints, _positionEnCours);
+                _vue.MettreAJourConsole($"Position {_positionEnCours} validée par commande vocale !");
+            }
+            else
+            {
+                _vue.MettreAJourConsole("Commande vocale détectée, mais aucun squelette n'est suivi.");
+            }
+
+            // Propager l'événement
             CommandeVocaleDetectee?.Invoke(this, EventArgs.Empty);
         }
 
+        /// <summary>
+        /// Active la reconnaissance vocale
+        /// </summary>
         public void ActiverReconnaissanceVocale()
         {
             _reconnaissanceVocale.DemarrerEcoute();
+            _vue.ChangerEtatReconnaissanceVocale(true, new SolidColorBrush(Colors.Green), Visibility.Visible);
         }
 
+        /// <summary>
+        /// Désactive la reconnaissance vocale
+        /// </summary>
         public void DesactiverReconnaissanceVocale()
         {
             _reconnaissanceVocale.ArreterEcoute();
+            _vue.ChangerEtatReconnaissanceVocale(false, new SolidColorBrush(Colors.Gray), Visibility.Collapsed);
         }
 
-        public Body CurrentBody => _currentBody;
-
+        /// <summary>
+        /// Libère les ressources
+        /// </summary>
         public void Dispose()
         {
-            if (_reconnaissanceVocale != null)
-            {
-                _reconnaissanceVocale.Dispose();
-            }
+            _reconnaissanceVocale?.Dispose();
         }
+
+        /// <summary>
+        /// Événement déclenché lorsqu'une commande vocale est détectée
+        /// </summary>
+        public event EventHandler CommandeVocaleDetectee;
     }
 }

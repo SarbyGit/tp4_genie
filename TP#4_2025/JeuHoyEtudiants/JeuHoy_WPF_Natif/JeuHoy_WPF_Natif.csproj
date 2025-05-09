@@ -73,6 +73,7 @@
     <Compile Include="modèle\position.cs" />
     <Compile Include="modèle\ReconnaissanceVocale.cs" />
     <Compile Include="présentation\EntrainementPresenteur.cs" />
+    <Compile Include="vue\IEntraienementVue.cs" />
     <Compile Include="vue\wAide.xaml.cs">
       <DependentUpon>wAide.xaml</DependentUpon>
     </Compile>
